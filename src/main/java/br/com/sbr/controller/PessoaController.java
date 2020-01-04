@@ -1,5 +1,7 @@
 package br.com.sbr.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +19,19 @@ public class PessoaController {
 	@Autowired
 	private PessoaServices services;
 	
+	@RequestMapping(method=RequestMethod.GET, 
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Pessoa> findAll() {
+		return services.findAll();
+	}
+	
 	@RequestMapping(value="/{id}", 
 			method=RequestMethod.GET, 
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public Pessoa findById(@PathVariable("id") String id) {
 		return services.findbyId(id);
 	}
+	
 
 }
 
