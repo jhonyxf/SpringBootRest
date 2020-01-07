@@ -13,6 +13,18 @@ public class PessoaServices {
 	
 	private final AtomicLong counter = new AtomicLong();
 	
+	public Pessoa create(Pessoa pessoa) {
+		return pessoa;
+	}
+	
+	public Pessoa update(Pessoa pessoa) {
+		return pessoa;
+	}
+	
+	public void delete(String id) {
+		
+	}
+	
 	public Pessoa findbyId(String id) {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setId(counter.incrementAndGet());
