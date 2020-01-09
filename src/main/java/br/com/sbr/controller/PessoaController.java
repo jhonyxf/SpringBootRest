@@ -29,8 +29,8 @@ public class PessoaController {
 	@RequestMapping(value="/{id}", 
 			method=RequestMethod.GET, 
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public Pessoa findById(@PathVariable("id") String id) {
-		return services.findbyId(id);
+	public Pessoa findById(@PathVariable("id") Long id) {
+		return services.findById(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,
@@ -49,7 +49,7 @@ public class PessoaController {
 	
 	@RequestMapping(value="/{id}", 
 			method=RequestMethod.DELETE)
-	public void delete(@PathVariable("id") String id) {
+	public void delete(@PathVariable("id") Long id) {
 		services.delete(id);
 	}
 	

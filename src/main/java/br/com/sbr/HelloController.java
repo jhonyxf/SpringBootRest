@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.sbr.exception.UnsuportOperacaoException;
 
 @RestController
 public class HelloController {
@@ -26,7 +25,6 @@ public class HelloController {
 	@RequestMapping(value="/somar/{numeroUm}/{numeroDois}", method=RequestMethod.GET)
 	public Double somar(@PathVariable("numeroUm") String numeroUm, @PathVariable("numeroDois") String numeroDois) throws Exception {
 		if(!isNumero(numeroUm) || !isNumero(numeroDois)) {
-			throw new UnsuportOperacaoException("Por favor defina um valor numérico!");
 		}
 		
 		return convertToDouble(numeroUm) + convertToDouble(numeroDois);
