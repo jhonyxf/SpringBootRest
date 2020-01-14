@@ -1,34 +1,20 @@
-package br.com.sbr.model;
+package br.com.sbr.data.vo;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="pessoa")
-public class Pessoa implements Serializable {
+public class PessoaVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name="name", nullable= false)
 	private String name;
-	@Column(name="sobrenome")
 	private String sobrenome;
-	@Column(name="endereco")
 	private String endereco;
-	@Column(name="genero", length=20)
 	private String genero;
 	
-	public Pessoa() {}
+	public PessoaVO() {}
 
 	public long getId() {
 		return id;
@@ -90,7 +76,7 @@ public class Pessoa implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pessoa other = (Pessoa) obj;
+		PessoaVO other = (PessoaVO) obj;
 		if (endereco == null) {
 			if (other.endereco != null)
 				return false;
@@ -115,7 +101,6 @@ public class Pessoa implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
+	
 }

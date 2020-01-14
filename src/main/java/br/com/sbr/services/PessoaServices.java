@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.sbr.data.model.Pessoa;
 import br.com.sbr.exception.ResourceNotFoundOperacaoException;
-import br.com.sbr.model.Pessoa;
 import br.com.sbr.repository.PessoaRepository;
 
 @Service
